@@ -5,10 +5,11 @@ import { Navbar } from "./components/Navbar";
 import { Students } from "./pages/students";
 import { StudentDetails } from "./pages/studentDetails";
 import { Addstudent } from "./pages/Addstudent";
+import { Layout } from "./pages/Layout";
 const App=()=>{
     return(
       <Routes>
-        <Route path='/' element={<Navbar/>}>
+        <Route path='/' element={<Layout/>}>
         <Route index element={<Home/>}/>
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='students' element={<Students/>}/>

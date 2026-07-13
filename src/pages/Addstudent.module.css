@@ -1,0 +1,67 @@
+.title{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#2563eb;
+
+    margin-bottom:30px;
+}
+
+.formGroup label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+}
+
+.actions button{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.formGroup input{
+
+    transition:.3s;
+}
+
+.formGroup input:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 8px rgba(37,99,235,.35);
+}
+
+@media (max-width:768px){
+
+    .card{
+        width:100%;
+        padding:25px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .actions{
+        flex-direction:column;
+    }
+
+}

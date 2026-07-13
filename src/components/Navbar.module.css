@@ -1,0 +1,60 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 40px;
+
+    background-color: #2563eb;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.icon{
+    font-size: 32px;
+}
+.navLinks{
+    display: flex;
+    gap: 25px;
+}
+
+
+.navLinks a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navLinks a:hover{
+    color: #facc15;
+}
+
+@media (max-width: 768px){
+     .navbar{
+    display:flex;
+    justify-content:space-between;
+}
+.navbar{
+    flex-direction: column;
+        gap:20px;
+
+}
+.navLinks{
+    flex-wrap: wrap;
+     justify-content:center;
+
+}
+}
