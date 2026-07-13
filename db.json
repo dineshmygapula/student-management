@@ -1,0 +1,41 @@
+{
+  "students": [
+    {
+      "id": "N92GQH99kPs",
+      "name": "dinesh",
+      "age": "65",
+      "dept": "CSE"
+    },
+    {
+      "id": "k9pYsijw4jY",
+      "name": "ramesh",
+      "age": "65",
+      "dept": "CSE"
+    },
+    {
+      "id": "gv3JjQ4uFEU",
+      "name": "gudraju",
+      "age": "45",
+      "dept": "ECE"
+    },
+    {
+      "id": "4TnhU06DpBY",
+      "name": "akhil",
+      "age": "45",
+      "dept": "ECE"
+    },
+    {
+      "id": "Pi2ao8rW__U",
+      "name": "Raju",
+      "age": "45",
+      "dept": "ECE"
+    },
+    {
+      "id": "R1eQ7GDFAZw",
+      "name": "kumar",
+      "age": "56",
+      "dept": "AIDS"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
