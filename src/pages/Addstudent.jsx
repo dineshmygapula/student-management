@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import { studentContext } from "../context/studentcontext";
 import { useNavigate } from "react-router-dom";
 import { addStudent, updateStudent } from "../services/studentservice";
-import styles from "./AddStudent.module.css";
+import styles from "./Addstudent.module.css";
 import { toast } from "react-toastify";
 
 import {
