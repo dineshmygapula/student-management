@@ -5,11 +5,14 @@ import { FaUserGraduate } from "react-icons/fa";
 import { FaBuilding } from "react-icons/fa";
 import { FaChartLine } from "react-icons/fa";
 import { FaCrown } from "react-icons/fa";
+import { Loader } from "./loader";
 
 export const Dashboard = () => {
+const { students,loading } = useContext(studentContext);
 
-    const { students } = useContext(studentContext);
-
+            if (loading) {
+    return <Loader />;
+}
     const totalStudents = students.length;
 
     const totalDepartments = new Set(

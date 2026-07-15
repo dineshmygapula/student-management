@@ -7,20 +7,8 @@
       "dept": "CSE"
     },
     {
-      "id": "k9pYsijw4jY",
-      "name": "ramesh",
-      "age": "65",
-      "dept": "CSE"
-    },
-    {
       "id": "gv3JjQ4uFEU",
       "name": "gudraju",
-      "age": "45",
-      "dept": "ECE"
-    },
-    {
-      "id": "4TnhU06DpBY",
-      "name": "akhil",
       "age": "45",
       "dept": "ECE"
     },
@@ -35,6 +23,18 @@
       "name": "kumar",
       "age": "56",
       "dept": "AIDS"
+    },
+    {
+      "id": "wsfzQbk3cF4",
+      "name": "akhil",
+      "age": "28",
+      "dept": "ECE"
+    },
+    {
+      "id": "mcGjLF_w9FU",
+      "name": "kumar",
+      "age": "35",
+      "dept": "EEE"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

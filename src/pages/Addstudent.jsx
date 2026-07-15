@@ -3,6 +3,8 @@ import { studentContext } from "../context/studentcontext";
 import { useNavigate } from "react-router-dom";
 import { addStudent, updateStudent } from "../services/studentservice";
 import styles from "./AddStudent.module.css";
+import { toast } from "react-toastify";
+
 import {
     FaUserPlus,
     FaUserEdit,
@@ -13,7 +15,7 @@ import {
     FaArrowLeft
 } from "react-icons/fa";
 
-export const Addstudent = () => {
+export const AddStudent = () => {
     const navigate = useNavigate();
 
     const { edit, setEdit, fetchStudents } = useContext(studentContext);
@@ -38,10 +40,10 @@ export const Addstudent = () => {
             age.trim() === "" ||
             dept.trim() === ""
         ) {
-            return alert("All fields must be filled.");
+            toast.error("All fields must be filled.");
+            return;
         }
 
-        // EDIT MODE
         if (edit) {
             const updatedStudent = {
                 id: edit.id,
@@ -54,25 +56,19 @@ export const Addstudent = () => {
             await fetchStudents();
 
             setEdit(null);
+            toast.success('student updated')
+        } else {
+            const newStudent = {
+                id: crypto.randomUUID(),
+                name,
+                age,
+                dept,
+            };
 
-            setName("");
-            setAge("");
-            setDept("");
-
-            navigate("/students");
-            return;
+            await addStudent(newStudent);
+            await fetchStudents();
+            toast.success('student added')
         }
-
-        // ADD MODE
-        const newStudent = {
-            id: crypto.randomUUID(),
-            name,
-            age,
-            dept,
-        };
-
-        await addStudent(newStudent);
-        await fetchStudents();
 
         setName("");
         setAge("");
@@ -83,18 +79,19 @@ export const Addstudent = () => {
 
     return (
         <div className={styles.container}>
+            <form className={styles.card} onSubmit={handleSubmit}>
 
-            <div className={styles.card}>
+                <h1 className={styles.title}>
+                    {edit ? <FaUserEdit /> : <FaUserPlus />}
+                    {edit ? "Edit Student" : "Add Student"}
+                </h1>
 
-        <h1>
-            {edit ? <FaUserEdit /> : <FaUserPlus />}
-            {edit ? "Edit Student" : "Add Student"}
-        </h1>
                 <div className={styles.formGroup}>
                     <label>
-                        <FaUser/>
+                        <FaUser />
                         Student Name
-                        </label>
+                    </label>
+
                     <input
                         type="text"
                         placeholder="Enter student name"
@@ -105,9 +102,10 @@ export const Addstudent = () => {
 
                 <div className={styles.formGroup}>
                     <label>
-                        <FaCalendarAlt/>
+                        <FaCalendarAlt />
                         Age
                     </label>
+
                     <input
                         type="number"
                         placeholder="Enter student age"
@@ -118,9 +116,10 @@ export const Addstudent = () => {
 
                 <div className={styles.formGroup}>
                     <label>
-                        <FaBuilding/>
+                        <FaBuilding />
                         Department
                     </label>
+
                     <input
                         type="text"
                         placeholder="Enter department"
@@ -130,21 +129,21 @@ export const Addstudent = () => {
                 </div>
 
                 <div className={styles.actions}>
-
-                    <button onClick={handleSubmit}>
+                    <button type="submit">
                         <FaSave />
                         {edit ? "Update Student" : "Add Student"}
                     </button>
 
-                    <button onClick={() => navigate("/students")}>
-                        <FaArrowLeft/>
+                    <button
+                        type="button"
+                        onClick={() => navigate("/students")}
+                    >
+                        <FaArrowLeft />
                         Back
                     </button>
-
                 </div>
 
-            </div>
-
+            </form>
         </div>
     );
 };

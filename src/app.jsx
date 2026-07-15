@@ -4,7 +4,7 @@ import { Dashboard } from "./pages/Dashboard";
 import { Navbar } from "./components/Navbar";
 import { Students } from "./pages/students";
 import { StudentDetails } from "./pages/studentDetails";
-import { Addstudent } from "./pages/Addstudent";
+import { AddStudent } from "./pages/Addstudent";
 import { Layout } from "./pages/Layout";
 const App=()=>{
     return(
@@ -14,7 +14,7 @@ const App=()=>{
         <Route path='dashboard' element={<Dashboard/>}/>
         <Route path='students' element={<Students/>}/>
         <Route path='studentdetails/:id' element={<StudentDetails/>}/>
-        <Route path='addstudent' element={<Addstudent/>}/>
+        <Route path='addstudent' element={<AddStudent/>}/>
         </Route>
 
       </Routes>

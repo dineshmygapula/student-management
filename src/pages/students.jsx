@@ -7,23 +7,28 @@ import { FaUserGraduate } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
+import { toast } from "react-toastify";
+import { Loader } from "./loader";
 
 export const Students = () => {
     const navigate = useNavigate();
 
-    const { students, setEdit, fetchStudents } = useContext(studentContext);
+    const { students, setEdit, fetchStudents,loading } = useContext(studentContext);
 
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState("");
+
+        if (loading) {
+    return <Loader />;
+}
 
     if (students.length === 0) {
         return <h2>No Students Found</h2>;
     }
 
     const handleDelete = async (id) => {
-        const confirmDelete = window.confirm(
-            "Are you sure you want to delete this student?"
+        const confirmDelete = toast.success(
+            "student deleted"
         );
 
         if (!confirmDelete) return;

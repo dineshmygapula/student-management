@@ -1,67 +1,177 @@
-.title{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:10px;
-
-    color:#2563eb;
-
-    margin-bottom:30px;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.formGroup label{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    margin-bottom:8px;
-
-    font-weight:600;
+/* Container */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    background: #f5f7fb;
 }
 
-.actions button{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:8px;
+/* Card */
+.card {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.formGroup input{
+/* Title */
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 
-    transition:.3s;
+    margin-bottom: 35px;
+
+    color: #2563eb;
+    font-size: 30px;
 }
 
-.formGroup input:focus{
-
-    border-color:#2563eb;
-
-    box-shadow:0 0 8px rgba(37,99,235,.35);
+/* Form Group */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
-@media (max-width:768px){
+/* Labels */
+.formGroup label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-    .card{
-        width:100%;
-        padding:25px;
+    margin-bottom: 8px;
+
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+/* Inputs */
+.formGroup input {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+}
+
+/* Placeholder */
+.formGroup input::placeholder {
+    color: #9ca3af;
+}
+
+/* Hover */
+.formGroup input:hover {
+    border-color: #93c5fd;
+}
+
+/* Focus */
+.formGroup input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Buttons */
+.actions button {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* Primary Button */
+.actions button:first-child {
+    background: #2563eb;
+    color: #fff;
+}
+
+.actions button:first-child:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.actions button:last-child {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.actions button:last-child:hover {
+    background: #d1d5db;
+    transform: translateY(-2px);
+}
+
+/* Button Press Effect */
+.actions button:active {
+    transform: scale(0.98);
+}
+
+/* Icons */
+.title svg,
+.formGroup label svg,
+.actions button svg {
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
     }
 
-    .title{
-        font-size:28px;
+    .card {
+        padding: 25px;
     }
 
-    .actions{
-        flex-direction:column;
+    .title {
+        font-size: 26px;
     }
 
+    .actions {
+        flex-direction: column;
+    }
+
+    .actions button {
+        width: 100%;
+    }
 }
