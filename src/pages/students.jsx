@@ -2,7 +2,7 @@ import { studentContext } from "../context/studentcontext";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { deleteStudent } from "../services/studentservice";
-import styles from "./Students.module.css";
+import styles from "./students.module.css";
 import { FaUserGraduate } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
