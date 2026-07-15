@@ -1,4 +1,4 @@
-const BASE_URL='http://localhost:3000/students'
+const BASE_URL = "https://student-management-5m4p.onrender.com/students";
 export const getStudents= async ()=>{
     const response= await fetch(BASE_URL)
     const data=await response.json()
